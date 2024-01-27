@@ -19,6 +19,7 @@ type ProductInterface interface {
 }
 
 type ProductServiceInterface interface {
+	GetAll() ([]ProductInterface, error)
 	Get(id string) (ProductInterface, error)
 	Create(name string, price float64) (ProductInterface, error)
 	Enable(product ProductInterface) (ProductInterface, error)
@@ -26,6 +27,7 @@ type ProductServiceInterface interface {
 }
 
 type ProductReader interface {
+	GetAll() ([]ProductInterface, error)
 	Get(id string) (ProductInterface, error)
 }
 
